@@ -15,10 +15,10 @@ function ProductsList( { items, pTitle } ) {
                 </thead>
                 <tbody>
                 {items.map((items, index) => (
-                        <tr key={index}>
-                            {/*<td> {items}</td>*/}
-                            {/*<td> {items.email}</td>*/}
-                        </tr>
+                    <tr key={index}>
+                        <td> {items.name}</td>
+                        <td> {items.price}</td>
+                    </tr>
                     )
                 )}
                 </tbody>
