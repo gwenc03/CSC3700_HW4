@@ -14,7 +14,7 @@ function CustomersList( {customers, cTitle} ) {
     return (
         <div>
             <h2> {cTitle} </h2>
-          <Table>
+          <Table striped bordered hover>
               <thead>
               <tr>
                   <th> Name </th>
