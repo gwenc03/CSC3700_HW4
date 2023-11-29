@@ -24,8 +24,8 @@ function CustomersList( {customers, cTitle} ) {
           <tbody>
                 {customers.map((customers, index) => (
                     <tr key={index}>
-                        <td> {customers.name}</td>
-                        <td> {customers.email}</td>
+                        <td> {customers.CustomerName}</td>
+                        <td> {customers.CustomerEmail}</td>
                         {/*<td>*/}
                         {/*    <Link to={`/customer/${customer.id}`}> Show {customer.id}</Link>*/}
                         {/*</td>*/}
