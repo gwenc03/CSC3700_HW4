@@ -11,29 +11,32 @@ function CustomersList( {customers, cTitle} ) {
     // console.log( customerName)
     // console.log( customerEmail)
     console.log( customers )
+    const cStyle = {
+        width: '70%'
+    };
     return (
         <div>
             <h2> {cTitle} </h2>
-          <Table striped bordered hover>
-              <thead>
-              <tr>
-                  <th> Name </th>
-                  <th> Email </th>
-              </tr>
-              </thead>
-          <tbody>
-                {customers.map((customers, index) => (
-                    <tr key={index}>
-                        <td> {customers.CustomerName}</td>
-                        <td> {customers.CustomerEmail}</td>
-                        {/*<td>*/}
-                        {/*    <Link to={`/customer/${customer.id}`}> Show {customer.id}</Link>*/}
-                        {/*</td>*/}
-                    </tr>
-                    )
-                )}
-          </tbody>
-          </Table>
+            <Table striped bordered hover style={cStyle}>
+                <thead>
+                <tr>
+                    <th> Name </th>
+                    <th> Email </th>
+                </tr>
+                </thead>
+                <tbody>
+                    {customers.map((customers) => (
+                        <tr key={customers.CustomerID}>
+                            <td> {customers.CustomerName}</td>
+                            <td> {customers.CustomerEmail}</td>
+                            <td>
+                                <Link to={`/editCustomer/${customers.CustomerID}`}> Show {customers.CustomerID}</Link>
+                            </td>
+                        </tr>
+                        )
+                    )}
+                </tbody>
+            </Table>
         </div>
     )
 }
