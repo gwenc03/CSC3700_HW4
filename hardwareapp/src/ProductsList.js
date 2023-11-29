@@ -16,8 +16,8 @@ function ProductsList( { items, pTitle } ) {
                 <tbody>
                 {items.map((items, index) => (
                     <tr key={index}>
-                        <td> {items.name}</td>
-                        <td> {items.price}</td>
+                        <td> {items.ItemName}</td>
+                        <td> {items.ItemPrice}</td>
                     </tr>
                     )
                 )}
