@@ -18,16 +18,16 @@ function SalesList({sales}) {
                 </tr>
                 </thead>
                 <tbody>
-                    {sales.map((sales) => (
+                {sales.map((sales) => (
                         <tr key={sales.SalesID}>
-                                <td> {sales.Date}</td>
-                                <td> {sales.CustomerName}</td>
-                                <td> {sales.Product}</td>
-                                <td> {sales.Quantity}</td>
-                                <td> {sales.TotalSales}</td>
+                            <td> {sales.Date}</td>
+                            <td> {sales.CustomerName}</td>
+                            <td> {sales.Product}</td>
+                            <td> {sales.Quantity}</td>
+                            <td> {sales.TotalSales}</td>
                         </tr>
-                        )
-                    )}
+                    )
+                )}
                 </tbody>
             </Table>
         </div>
