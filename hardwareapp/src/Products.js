@@ -5,11 +5,7 @@ import ProductsList from "./ProductsList";
 
 
 function Products(props) {
-<<<<<<< Updated upstream
-    let url = "http://localhost:8001/items"
-=======
     let url = "http://localhost:8003/items"
->>>>>>> Stashed changes
     const { data : items, isPending, error} = useFetch( url )
     const pTitle = "Products Management"
     return (
