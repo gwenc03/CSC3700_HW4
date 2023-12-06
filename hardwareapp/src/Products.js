@@ -5,7 +5,7 @@ import ProductsList from "./ProductsList";
 
 
 function Products(props) {
-    let url = "http://localhost:8002/customers"
+    let url = "http://localhost:8001/items"
     const { data : items, isPending, error} = useFetch( url )
     const pTitle = "Products Management"
     return (
@@ -19,6 +19,7 @@ function Products(props) {
                 { error && <div> Error: {error} </div> }
                 {isPending && <div> Loading ...</div>}
                 { items && <ProductsList items={items} title={pTitle}/>}
+
             </Col>
         </Row>
     );
