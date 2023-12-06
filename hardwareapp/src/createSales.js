@@ -21,7 +21,7 @@ function CreateSales(props) {
         const sale = { sid, salesDate, cname, iname, quantity, totalSales }
         console.log( `sales=`); console.log( sale );
         setIsPending( true );
-        let URL = "http://localhost:8002/sales"
+        let URL = "http://localhost:8003/sales"
         fetch ( URL, {
             method: 'POST',
             headers: { "Content-Type": "application/json"},
