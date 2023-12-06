@@ -18,7 +18,7 @@ function CreateCustomers(props) {
         const customer = { cid, name, email }
         console.log( `customer=`); console.log( customer );
         setIsPending( true );
-        let URL = "http://localhost:8002/customers"
+        let URL = "http://localhost:8003/customers"
         fetch ( URL, {
             method: 'POST',
             headers: { "Content-Type": "application/json"},
