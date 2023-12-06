@@ -3,7 +3,7 @@ import useFetch from "./useFetch";
 import {Col, Row} from "react-bootstrap";
 import CustomersList from "./CustomersList";
 function Customers(props) {
-    let url = "http://localhost:8002/customers"
+    let url = "http://localhost:8003/customers"
     const { data : customers, isPending, error} = useFetch( url )
     const cTitle = "Customers Management"
     return (

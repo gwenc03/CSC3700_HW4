@@ -16,7 +16,7 @@ function CreateProducts(props) {
         const customer = { iid, name, price }
         console.log( `item=`); console.log( item );
         setIsPending( true );
-        let URL = "http://localhost:8002/items"
+        let URL = "http://localhost:8003/items"
         fetch ( URL, {
             method: 'POST',
             headers: { "Content-Type": "application/json"},

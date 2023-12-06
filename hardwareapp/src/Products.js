@@ -5,7 +5,7 @@ import ProductsList from "./ProductsList";
 
 
 function Products(props) {
-    let url = "http://localhost:8002/customers"
+    let url = "http://localhost:8003/customers"
     const { data : items, isPending, error} = useFetch( url )
     const pTitle = "Products Management"
     return (
