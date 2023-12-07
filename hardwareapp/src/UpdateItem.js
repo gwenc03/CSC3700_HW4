@@ -5,7 +5,7 @@ import {Button, Form, Table} from "react-bootstrap";
 
 function UpdateItem(props) {
     const {id} = useParams();
-    let url = `http://localhost:8001/items/${id}`;
+    let url = `http://localhost:8003/items/${id}`;
     const {data: item, error, isPending2} = useFetch(url);
     const [itemName, setItemName] = useState("");
     const [itemPrice, setItemPrice] = useState("");
@@ -15,7 +15,7 @@ function UpdateItem(props) {
         e.preventDefault();
         const item = {id, itemName, itemPrice}
         setIsPending( true );
-        let URL = "http://localhost:8000/books";
+        let URL = "http://localhost:8003/items";
         fetch( URL , {
             method: 'POST',
             headers: { "Content-Type": "application/json"},
