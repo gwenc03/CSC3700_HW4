@@ -7,6 +7,10 @@ import Sales from "./Sales";
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {Col, Row} from "react-bootstrap";
 import UpdateItem from "./UpdateItem";
+import UpdateCustomer from "./UpdateCustomer";
+import CreateItem from "./CreateItem";
+import CreateCustomer from "./CreateCustomer";
+
 
 function App() {
     return (
@@ -16,6 +20,9 @@ function App() {
                 <Switch>
                     <Route exact path="/">
                         <HomePage/>
+                    </Route>
+                    <Route path='/customers/:id'>
+                        <UpdateCustomer />
                     </Route>
                     <Route path="/customers">
                         <Customers/>
@@ -29,6 +36,16 @@ function App() {
                     <Route path='/items/:id'>
                         <UpdateItem />
                     </Route>
+                    <Route path='/createitem'>
+                        <CreateItem />
+                    </Route>
+                    <Route path='/createcustomer'>
+                        <CreateCustomer />
+                    </Route>
+                    <Route path='/homepage'>
+                        <HomePage />
+                    </Route>
+
                 </Switch>
             </Router>
         </div>

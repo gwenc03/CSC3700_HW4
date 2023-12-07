@@ -1,44 +1,64 @@
-import {Table} from "react-bootstrap";
-
-import {Link} from "react-router-dom";
-
 import React from 'react';
-import customers from "./customers";
+import {Button, Table} from "react-bootstrap";
+import {Link, useHistory} from "react-router-dom";
 
-function CustomersList( {customers, cTitle} ) {
-    // const customerName = props.name;
-    // const customerEmail = props.email;
-    // console.log( customerName)
-    // console.log( customerEmail)
+function CustomersList( { customers, title } ) {
     console.log( customers )
-    const cStyle = {
-        width: '70%'
+    const history = useHistory();
+    const handleClick = (customer) => {
+        let URL = `http://localhost:8003/customers/${customer.CustomerID}`;
+        console.log('delete url');
+        console.log(URL);
+        fetch(URL, {
+            method: 'DELETE',
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Failed to delete customer: ${response.status}`);
+                }
+                return response.json(); // or response.text(), depending on your server's response
+            })
+            .then(() => {
+                history.go(0);
+                // history.push('/customers');
+            })
+            .catch((error) => {
+                console.error('Error deleting customer:', error);
+                // Handle error state if needed
+            });
     };
+
+
     return (
         <div>
-            <h2> {cTitle} </h2>
-            <Table striped bordered hover style={cStyle}>
+            <h2> {title} </h2>
+            <Table striped bordered hover>
                 <thead>
                 <tr>
                     <th> Name </th>
                     <th> Email </th>
+                    <th> </th>
+                    <th> </th>
                 </tr>
                 </thead>
                 <tbody>
-                    {customers.map((customers) => (
-                        <tr key={customers.CustomerID}>
-                            <td> {customers.CustomerName}</td>
-                            <td> {customers.CustomerEmail}</td>
+                {customers.map((customer) => (
+                        <tr key={customer.CustomerID}>
+                            <td> {customer.CustomerName}</td>
+                            <td> {customer.CustomerEmail}</td>
                             <td>
-                                <Link to={`/editCustomer/${customers.CustomerID}`}> Show {customers.CustomerID}</Link>
+                                <Link to={`/customers/${customer.CustomerID}`}> Update {customer.CustomerID}</Link>
                             </td>
+                            <td> <Button onClick={() => handleClick(customer)}> Delete {customer.CustomerID}  </Button></td>
                         </tr>
-                        )
-                    )}
+                    )
+                )}
                 </tbody>
             </Table>
+            <Link to={'/createcustomer'}> Create New Customer </Link>
         </div>
-    )
+
+    );
 }
 
 export default CustomersList;
