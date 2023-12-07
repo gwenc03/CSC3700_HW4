@@ -8,10 +8,10 @@ function ProductsList( { items, title } ) {
     console.log( items )
     const history = useHistory();
     const {id} = useParams();
-    let url = `http://localhost:8001/items/${id}`
+    let url = `http://localhost:8003/items/${id}`
     const { data: item, error, isPending} = useFetch(url)
     const handleClick = () => {
-        let URL = `http://localhost:8001/items/${item.id}`;
+        let URL = `http://localhost:8003/items/${item.id}`;
         fetch(URL , {
             method: 'DELETE',
         }).then(() => {
