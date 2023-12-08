@@ -65,9 +65,9 @@ function CustomersList( { customers, title } ) {
                                 <Link to={`/customers/${customer.CustomerID}`}> Update {customer.CustomerID}</Link>
                             </td>
                             <td> <Button onClick={() => handleClick(customer)}> Delete {customer.CustomerID}  </Button></td>
-                            <td>
-                                <Link to={`/customers/${customers.CustomerID}`}> Update {customers.CustomerID}</Link>
-                            </td>
+                            {/*<td>*/}
+                            {/*    <Link to={`/customers/${customers.CustomerID}`}> Update {customers.CustomerID}</Link>*/}
+                            {/*</td>*/}
                         </tr>
                     )
                 )}
