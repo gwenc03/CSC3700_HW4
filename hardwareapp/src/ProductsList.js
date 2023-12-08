@@ -54,16 +54,17 @@ function ProductsList( { items, title } ) {
                             <td> {item.TotalSales}</td>
 
                             <td>
-                                <Link to={`/items/${item.ItemID}`}> Update {item.ItemID}</Link>
+                                <Link to={`/items/${item.ItemID}`} className='btn btn-primary'> Update</Link>
                             </td>
-                            <td> <Button onClick={() => handleClick(item)}> Delete {item.ItemID}  </Button></td>
+                            <td> <Button onClick={() => handleClick(item)}> Delete </Button></td>
 
                         </tr>
                     )
                 )}
                 </tbody>
             </Table>
-            <Link to={'/createitem'}> Create New Item </Link>
+            <Link to={'/createitem'} className='btn btn-primary'> Create New Item </Link>
+
         </div>
     );
 }

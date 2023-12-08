@@ -10,6 +10,8 @@ import UpdateItem from "./UpdateItem";
 import UpdateCustomer from "./UpdateCustomer";
 import CreateCustomer from "./CreateCustomer";
 import CreateItem from "./CreateItem";
+import NotFound from "./NotFound";
+import WelcomePage from "./WelcomePage";
 
 function App() {
     return (
@@ -18,7 +20,7 @@ function App() {
             <Router>
                 <Switch>
                     <Route exact path="/">
-                        <HomePage/>
+                        <WelcomePage />
                     </Route>
                     <Route path='/customers/:id'>
                         <UpdateCustomer />
@@ -46,6 +48,9 @@ function App() {
                     </Route>
                     <Route path='customers/:id'>
                         <UpdateCustomer />
+                    </Route>
+                    <Route path='*'>
+                        <NotFound />
                     </Route>
                 </Switch>
             </Router>

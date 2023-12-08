@@ -3,11 +3,12 @@ import {Table} from "react-bootstrap";
 import {Link} from 'react-router-dom';
 import customers from "./customers";
 
-function SalesList({sales}) {
+function SalesList({sales, title}) {
     console.log(sales)
     return (
         <div>
-            <Table striped bordered hover>
+            <h2> {title} </h2>
+            <Table striped bordered hover >
                 <thead>
                 <tr>
                     <th> Date </th>

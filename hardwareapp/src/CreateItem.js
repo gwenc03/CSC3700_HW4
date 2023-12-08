@@ -35,7 +35,7 @@ function CreateItem(props) {
     }
     return (
         <div>
-            <Row>
+            <Row style={{ padding: '20px' }}>
                 <Col sm={1}>
                 </Col>
                 <Col sm={10}>
