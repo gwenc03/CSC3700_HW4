@@ -9,7 +9,7 @@ function ProductsList( { items, title } ) {
     const history = useHistory();
     const {id} = useParams();
     let url = `http://localhost:8003/items/${id}`
-    // const { data: item, error, isPending} = useFetch(url)
+
     const handleClick = (item) => {
         let URL = `http://localhost:8003/items/${item.ItemID}`;
         console.log('delete url');
@@ -21,20 +21,16 @@ function ProductsList( { items, title } ) {
                 if (!response.ok) {
                     throw new Error(`Failed to delete item: ${response.status}`);
                 }
-                return response.json(); // or response.text(), depending on your server's response
+                return response.json();
             })
             .then(() => {
                 history.go(0);
-                // history.push('/customers');
             })
             .catch((error) => {
                 console.error('Error deleting item:', error);
-                // Handle error state if needed
             });
     };
-    const CreateNewItemPage = () => {
 
-    }
     return (
         <div>
             <h2> {title} </h2>

@@ -16,14 +16,11 @@ function UpdateCustomer(props) {
     })
 
     useEffect( () => {
-        // let url = " http://localhost:8000/books";
         console.log("URL->" + url);
         const abortContr = new AbortController();
-        // setTimeout( () => {
-        let book = '';
         fetch(url, {signal: abortContr.signal})
             .then(resp => {
-                console.log( `fetch Done->`); // console.log( resp );
+                console.log( `fetch Done->`);
                 if (!resp.ok) {
                     throw Error("Cannot fetch URL data for resource")
                 }
@@ -70,7 +67,6 @@ function UpdateCustomer(props) {
         }).then(() => {
             console.log("Added new customer");
             setIsPending( false );
-            // useHistory.go(-1);
             history.push('/customers');
         })
     }
@@ -101,8 +97,6 @@ function UpdateCustomer(props) {
 
                         {!isPending && <Button variant="primary" type="submit">Submit</Button>}
                         {isPending && <Button disabled variant="primary" type="submit">Adding  Content </Button>}
-                        {/*{isPending ? <Button variant="primary" type="submit">Submit</Button>*/}
-                        {/*          : <Button disabled variant="primary" type="submit">Adding  Content </Button>}*/}
 
                     </Form>
                 </div>

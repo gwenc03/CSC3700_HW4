@@ -9,9 +9,6 @@ function Products(props) {
     const { data : items, isPending, error} = useFetch( url )
     const pTitle = "Products Management"
     return (
-        // <div>
-        // <h2> Products Page </h2>
-        // </div>
         <Row style={{ padding: '20px' }}>
             <Col sm={1}>
             </Col>

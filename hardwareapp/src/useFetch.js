@@ -1,19 +1,15 @@
 import {useEffect, useState} from "react";
 
 const useFetch = ( url ) => {
-    // const[ books, setBooks ] = useState( null );
     const[ data, setData ] = useState( null );
     const [error, setError ] = useState(  null );
     const [ isPending, setIsPending] = useState(true);
 
     useEffect( () => {
-        // let url = " http://localhost:8000/books";
         console.log("URL->" + url );
         const abortContr = new AbortController();
-        // setTimeout( () => {
             fetch( url, { signal : abortContr.signal })
                 .then(resp => {
-                    // console.log( `resp->`); console.log( resp );
                     if ( !resp.ok){
                         throw Error("Cannot fetch URL data for resource")
                     }
@@ -23,7 +19,6 @@ const useFetch = ( url ) => {
                 setIsPending( false );
                 console.log( "data=>")
                 console.log( data );
-                // setBooks( data );
                 setData( data );
                 setError ( null );
             }).catch( (err) => {
@@ -44,7 +39,7 @@ const useFetch = ( url ) => {
             abortContr.abort();
 
         }
-    }, [ url ] ); // Whenever URL changes rerun
+    }, [ url ] );
     return { data, isPending, error}
 }
 export default useFetch;

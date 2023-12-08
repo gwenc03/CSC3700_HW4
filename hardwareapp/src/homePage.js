@@ -3,7 +3,6 @@ import {Button, Col, Row} from "react-bootstrap";
 import './App.css';
 import useFetch from "./useFetch";
 import {Link} from "react-router-dom";
-import CustomersList from "./CustomersList";
 
 function HomePage(props) {
     let URL = "http://localhost:8003/homepage"

@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {useHistory} from "react-router-dom";
 import Form from "react-bootstrap/Form";
-import customers from "./customers";
 
 function CreateSales(props) {
     const [sid, setSid ] = useState("");
@@ -13,7 +12,6 @@ function CreateSales(props) {
 
 
     const [ isPending, setIsPending ] = useState(false);
-    // const navigate = useNavigate();
     const history = useHistory();
 
     const handleSubmit = (e) => {

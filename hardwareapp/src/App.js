@@ -5,7 +5,6 @@ import Customers from "./customers";
 import Products from "./Products";
 import Sales from "./Sales";
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import {Col, Row} from "react-bootstrap";
 import UpdateItem from "./UpdateItem";
 import UpdateCustomer from "./UpdateCustomer";
 import CreateCustomer from "./CreateCustomer";

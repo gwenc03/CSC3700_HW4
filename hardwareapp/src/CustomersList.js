@@ -1,7 +1,6 @@
 import React from 'react';
 import {Button, Table} from "react-bootstrap";
 import {Link, useHistory, useParams} from "react-router-dom";
-import customers from "./customers";
 import useFetch from "./useFetch";
 
 
@@ -23,26 +22,15 @@ function CustomersList( { customers, title } ) {
             })
             .then(() => {
                 history.go(0);
-                // history.push('/customers');
             })
             .catch((error) => {
                 console.error('Error deleting customer:', error);
-                // Handle error state if needed
             });
     };
 
     const {id} = useParams();
     let url = `http://localhost:8003/customers/${id}`;
     const { data: customer, error, isPending} = useFetch(url)
-
-    // const handleClick = () => {
-    //     let URL = `http://localhost:8003/customers/${customer.id}`;
-    //     fetch(URL, {
-    //         method: 'DELETE',
-    //     }).then(() => {
-    //         history.push('/');
-    //     })
-    // }
 
     return (
         <div>
@@ -65,9 +53,6 @@ function CustomersList( { customers, title } ) {
                                 <Link to={`/customers/${customer.CustomerID}`} className='btn btn-primary'> Update </Link>
                             </td>
                             <td> <Button onClick={() => handleClick(customer)}> Delete  </Button></td>
-                            {/*<td>*/}
-                            {/*    <Link to={`/customers/${customers.CustomerID}`}> Update {customers.CustomerID}</Link>*/}
-                            {/*</td>*/}
                         </tr>
                     )
                 )}
