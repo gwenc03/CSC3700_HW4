@@ -60,7 +60,7 @@ function CustomersList( { customers, title } ) {
                 {customers.map((customer) => (
                         <tr key={customer.CustomerID}>
                             <td> {customer.CustomerName}</td>
-                            <td> {customer.CustomerEmail}</td>
+                            <td> {customer.CustomerEmail}</td> 
                             <td>
                                 <Link to={`/customers/${customer.CustomerID}`} className='btn btn-primary'> Update </Link>
                             </td>
