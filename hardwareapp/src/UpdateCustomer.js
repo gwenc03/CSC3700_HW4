@@ -105,12 +105,6 @@ function UpdateCustomer(props) {
                         {/*          : <Button disabled variant="primary" type="submit">Adding  Content </Button>}*/}
 
                     </Form>
-                    <ol>
-                        <li>customer name:{values.CustomerName || ''}</li>
-                        <li>customer email:{values.CustomerEmail || ''}</li>
-
-                    </ol>
-                    <Link to="/"> Back Home </Link>
                 </div>
             )}
         </div>

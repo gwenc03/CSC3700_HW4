@@ -111,12 +111,6 @@ function UpdateItem(props) {
                         {/*    : <Button disabled variant="primary" type="submit">Adding  Content </Button>}*/}
 
                     </Form>
-                    <ol>
-                        <li>item name:{values.ItemName || ''}</li>
-                        <li>item price:{values.ItemPrice|| ''}</li>
-                    </ol>
-
-                    <Link to="/"> Back Home </Link>
                 </div>
             )}
         </div>
