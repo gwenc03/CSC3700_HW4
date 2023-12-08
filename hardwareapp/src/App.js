@@ -8,9 +8,12 @@ import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {Col, Row} from "react-bootstrap";
 import UpdateItem from "./UpdateItem";
 import UpdateCustomer from "./UpdateCustomer";
+<<<<<<< Updated upstream
 import CreateItem from "./CreateItem";
 import CreateCustomer from "./CreateCustomer";
 
+=======
+>>>>>>> Stashed changes
 
 function App() {
     return (
@@ -36,6 +39,7 @@ function App() {
                     <Route path='/items/:id'>
                         <UpdateItem />
                     </Route>
+<<<<<<< Updated upstream
                     <Route path='/createitem'>
                         <CreateItem />
                     </Route>
@@ -46,6 +50,11 @@ function App() {
                         <HomePage />
                     </Route>
 
+=======
+                    <Route path='customers/:id'>
+                        <UpdateCustomer />
+                    </Route>
+>>>>>>> Stashed changes
                 </Switch>
             </Router>
         </div>
