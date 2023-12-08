@@ -1,16 +1,9 @@
-<<<<<<< Updated upstream
 import React from 'react';
 import {Button, Table} from "react-bootstrap";
-import {Link, useHistory} from "react-router-dom";
-=======
-import {Table} from "react-bootstrap";
-
 import {Link, useHistory, useParams} from "react-router-dom";
-
-import React from 'react';
 import customers from "./customers";
 import useFetch from "./useFetch";
->>>>>>> Stashed changes
+
 
 function CustomersList( { customers, title } ) {
     console.log( customers )
@@ -37,23 +30,19 @@ function CustomersList( { customers, title } ) {
                 // Handle error state if needed
             });
     };
-<<<<<<< Updated upstream
 
-=======
-    const history = useHistory();
     const {id} = useParams();
     let url = `http://localhost:8003/customers/${id}`;
     const { data: customer, error, isPending} = useFetch(url)
 
-    const handleClick = () => {
-        let URL = `http://localhost:8003/customers/${customer.id}`;
-        fetch(URL, {
-            method: 'DELETE',
-        }).then(() => {
-            history.push('/');
-        })
-    }
->>>>>>> Stashed changes
+    // const handleClick = () => {
+    //     let URL = `http://localhost:8003/customers/${customer.id}`;
+    //     fetch(URL, {
+    //         method: 'DELETE',
+    //     }).then(() => {
+    //         history.push('/');
+    //     })
+    // }
 
     return (
         <div>
@@ -75,13 +64,10 @@ function CustomersList( { customers, title } ) {
                             <td>
                                 <Link to={`/customers/${customer.CustomerID}`}> Update {customer.CustomerID}</Link>
                             </td>
-<<<<<<< Updated upstream
                             <td> <Button onClick={() => handleClick(customer)}> Delete {customer.CustomerID}  </Button></td>
-=======
                             <td>
                                 <Link to={`/customers/${customers.CustomerID}`}> Update {customers.CustomerID}</Link>
                             </td>
->>>>>>> Stashed changes
                         </tr>
                     )
                 )}
