@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 import CustomersList from "./CustomersList";
 
 function HomePage(props) {
-    let URL = "http://localhost:8001/homepage"
+    let URL = "http://localhost:8003/homepage"
     const {data, isPending, error} = useFetch(URL);
     const customers = Array.isArray(data) ? data : [];
     const formatMonth = (monthString) => {
