@@ -10,10 +10,10 @@ function Customers(props) {
         // <div>
         //    <h2> customers page </h2>
         // </div>
-        <Row>
-            <Col sm={3}>
+        <Row style={{ padding: '20px' }}>
+            <Col sm={1}>
             </Col>
-            <Col sm={3}>
+            <Col sm={10}>
                 { error && <div> Error: {error} </div> }
                 {isPending && <div> Loading ...</div>}
                 { customers && <CustomersList customers={customers} title={cTitle}/>}

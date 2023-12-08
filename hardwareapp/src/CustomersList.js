@@ -62,9 +62,9 @@ function CustomersList( { customers, title } ) {
                             <td> {customer.CustomerName}</td>
                             <td> {customer.CustomerEmail}</td> 
                             <td>
-                                <Link to={`/customers/${customer.CustomerID}`}> Update {customer.CustomerID}</Link>
+                                <Link to={`/customers/${customer.CustomerID}`} className='btn btn-primary'> Update </Link>
                             </td>
-                            <td> <Button onClick={() => handleClick(customer)}> Delete {customer.CustomerID}  </Button></td>
+                            <td> <Button onClick={() => handleClick(customer)}> Delete  </Button></td>
                             {/*<td>*/}
                             {/*    <Link to={`/customers/${customers.CustomerID}`}> Update {customers.CustomerID}</Link>*/}
                             {/*</td>*/}
@@ -73,7 +73,7 @@ function CustomersList( { customers, title } ) {
                 )}
                 </tbody>
             </Table>
-            <Link to={'/createcustomer'}> Create New Customer </Link>
+            <Link to={'/createcustomer'} className='btn btn-primary'> Create New Customer </Link>
         </div>
 
     );

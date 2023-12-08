@@ -6,14 +6,15 @@ import SalesList from "./SalesList";
 function Sales(props) {
     let url = "http://localhost:8003/sales"
     const { data : sales, isPending, error} = useFetch( url )
+    const title = 'Sales Management'
     return (
-        <Row>
-            <Col sm={3}>
+        <Row  style={{ padding: '20px' }}>
+            <Col sm={1}>
             </Col>
-            <Col sm={3}>
+            <Col sm={10}>
                 { error && <div> Error: {error} </div> }
                 { isPending && <div> Loading ...</div>}
-                { sales && <SalesList sales={sales}/>}
+                { sales && <SalesList sales={sales} title={title}/>}
             </Col>
         </Row>
     );
